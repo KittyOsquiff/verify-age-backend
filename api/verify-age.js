@@ -1,0 +1,4 @@
+(No subject)
+Sarah Walmsley
+​You​
+export default async function handler(req, res) { if (req.method !== 'POST') { return res.status(405).json({ error: 'Method not allowed' }); } try { const { userData } = req.body; const apiResponse = await fetch('https://api.verifymyage.com/verify', { method: 'POST', headers: { 'Authorization': 'Bearer YOUR_API_KEY', 'Content-Type': 'application/json' }, body: JSON.stringify({ user: userData }) }); const data = await apiResponse.json(); res.status(200).json({ verified: data.verified, reason: data.reason || '' }); } catch (err) { console.error(err); res.status(500).json({ verified: false, reason: 'Server error' }); } }
