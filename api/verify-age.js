@@ -1,6 +1,3 @@
-(No subject)
-Sarah Walmsley
-​You​
 // api/verify-age.js (DEBUG / CORS-enabled)
 export default async function handler(req, res) {
   // Allow a single origin set via ENV, or fallback to '*'
